@@ -2,8 +2,9 @@ import express from "express";
 import { config } from "dotenv";
 import { connectDB, disconnectDB } from "./config/db.js";
 import cookieParser from "cookie-parser";
-const swaggerUi = require("swagger-ui-express");
-const swaggerJsdoc = require("swagger-jsdoc");
+import cors from "cors";
+import swaggerUi from "swagger-ui-express";
+import swaggerJsdoc from "swagger-jsdoc";
 
 // IMPORT Routes
 import movieRoute from "./routes/movieRoute.js";
@@ -18,6 +19,7 @@ const app = express();
 app.use(cookieParser());
 
 // Body parsing middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
