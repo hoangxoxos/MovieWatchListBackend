@@ -6,7 +6,7 @@ import { validateRequest } from "../middleware/validateRequest.js";
 const router = express.Router();
 /**
  * @openapi
- * /api/auth/login:
+ * /auth/login:
  *   post:
  *     summary: Đăng nhập vào hệ thống
  *     tags: [Auth]
